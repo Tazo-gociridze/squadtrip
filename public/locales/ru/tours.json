@@ -1,0 +1,11 @@
+{
+  "tours-title": "Наши эксклюзивные туры",
+  "tours-search-placeholder": "Поиск тура...",
+  "no-tours-available": "Туры отсутствуют",
+  "tour-view-more": "Подробнее",
+  "tour-error-message": "Произошла ошибка при загрузке туров. Пожалуйста, попробуйте снова.",
+
+  "non-selected": "Не выбрано",
+  "sort-by-price": "Сортировать по цене",
+  "sort-by-date": "Сортировать по дате"
+}

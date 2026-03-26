@@ -1,0 +1,11 @@
+{
+  "registration": "Регистрация",
+  "usernamePlaceholder": "Имя пользователя",
+  "emailPlaceholder": "Электронная почта",
+  "passwordPlaceholder": "Пароль",
+  "repeatPasswordPlaceholder": "Повторите пароль",
+  "dontHaveAnAccount": "Уже есть аккаунт?",
+  "createAccount": "Создать аккаунт",
+  "phone-number": "Телефон",
+  "login": "Войти"
+}

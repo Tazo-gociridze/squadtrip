@@ -1,0 +1,9 @@
+{
+  "Username must be at least 3 characters": "Имя пользователя должно содержать минимум 3 символа",
+  "Username must be at most 20 characters": "Имя пользователя должно содержать максимум 20 символов",
+  "Invalid email address": "Неверный адрес электронной почты",
+  "Invalid phone number": "Неверный номер телефона",
+  "Phone number must be at least 10 characters": "Номер телефона должен содержать минимум 10 цифр",
+  "Password must be at least 6 characters": "Пароль должен содержать минимум 6 символов",
+  "Passwords do not match": "Пароли не совпадают"
+}

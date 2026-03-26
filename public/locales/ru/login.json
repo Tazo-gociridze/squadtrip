@@ -1,0 +1,7 @@
+{
+  "emailPlaceholder": "Электронная почта",
+  "passwordPlaceholder": "Пароль",
+  "doYouHaveAccount": "Уже есть аккаунт?",
+  "register": "Зарегистрироваться",
+  "invalid email or password": "Неверный email или пароль"
+}
