@@ -5,7 +5,7 @@ import { FC } from 'react';
 import useCarouselItemLogic, { CarouselItemProps } from './hook/useCarouselItemLogic';
 
 const CarouselItem: FC<CarouselItemProps> = ({ tour }) => {
-  const { contentStyle, t } = useCarouselItemLogic({ tour });
+  const { contentStyle } = useCarouselItemLogic({ tour });
   return (
     <div className="group h-full w-full">
       <DarkenImage>
