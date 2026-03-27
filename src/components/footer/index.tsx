@@ -2,7 +2,6 @@ import React from 'react';
 import { Input } from 'antd';
 import {
   InstagramOutlined,
-  FacebookOutlined,
   TikTokOutlined
 } from '@ant-design/icons';
 
