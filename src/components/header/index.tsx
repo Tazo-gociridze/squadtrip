@@ -1,5 +1,4 @@
 import HeaderLogo from './components/header-logo';
-import HeaderMenu from './components/header-menu';
 // import HeaderNav from './components/header-nav';
 import HeaderTools from './components/header-tools';
 import { useState } from 'react';
@@ -19,7 +18,7 @@ const Header = () => {
           isMenuActive ? 'visible opacity-100' : 'invisible opacity-0'
         }`}
       >
-        <HeaderMenu isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive} />
+        {/* <HeaderMenu isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive} /> */}
       </div>
     </header>
   );

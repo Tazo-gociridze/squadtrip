@@ -161,10 +161,6 @@ const HomeMainSection: React.FC = () => {
                   Join the Waitlist
                 </Button>
               </div>
-              
-              <p className="mt-6 text-xs text-slate-400 font-semibold uppercase tracking-widest">
-                ✨ 500+ travelers already joined
-              </p>
             </div>
           </div>
         </div>

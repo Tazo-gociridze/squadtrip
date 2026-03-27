@@ -2,8 +2,6 @@ import Button from '@/utils/Button/Button';
 import { ChangeLangAndThemeContainerStyles, } from '../../header.styles';
 import { Link } from 'react-router-dom';
 import useHeaderToolsLogic from '../../hooks/header-tools-logic';
-import { FiMenu } from 'react-icons/fi';
-import { IoClose } from 'react-icons/io5';
 import { FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Dropdown, MenuProps, Space } from 'antd';
@@ -18,7 +16,7 @@ interface HeaderToolsProps {
   setIsMenuActive: (state: boolean) => void;
 }
 
-const HeaderTools: FC<HeaderToolsProps> = ({ isMenuActive, setIsMenuActive }) => {
+const HeaderTools: FC<HeaderToolsProps> = () => {
   const { user, t } = useHeaderToolsLogic();
   const { t: Tprofile } = useTranslation('profile');
 
@@ -75,24 +73,24 @@ const HeaderTools: FC<HeaderToolsProps> = ({ isMenuActive, setIsMenuActive }) =>
         <span>{themeIcon}</span>
       </div> */}
 
-      <div className="hidden sm:block">
+      <div className="block">
         {user ? (
           <Link to={'/profile'}>
-            <Button>{Tprofile('profile')}</Button>
+            <Button style={{backgroundColor: "#FEBAD1"}}>{Tprofile('profile')}</Button>
           </Link>
         ) : (
           <Link to={`/login`}>
-            <Button>{t('headerLogin')}</Button>
+            <Button style={{backgroundColor: "#FEBAD1"}}>{t('headerLogin')}</Button>
           </Link>
         )}
       </div>
-
+{/* 
       <div
         onClick={() => setIsMenuActive(!isMenuActive)}
         className="block cursor-pointer text-3xl lg:hidden"
       >
         {isMenuActive ? <IoClose /> : <FiMenu />}
-      </div>
+      </div> */}
     </div>
   );
 };
