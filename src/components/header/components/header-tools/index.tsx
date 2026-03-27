@@ -1,5 +1,5 @@
 import Button from '@/utils/Button/Button';
-import { ChangeLangAndThemeContainerStyles, ChangeThemeStyles } from '../../header.styles';
+import { ChangeLangAndThemeContainerStyles, } from '../../header.styles';
 import { Link } from 'react-router-dom';
 import useHeaderToolsLogic from '../../hooks/header-tools-logic';
 import { FiMenu } from 'react-icons/fi';
@@ -19,7 +19,7 @@ interface HeaderToolsProps {
 }
 
 const HeaderTools: FC<HeaderToolsProps> = ({ isMenuActive, setIsMenuActive }) => {
-  const { user, themeIcon, changeTheme, t } = useHeaderToolsLogic();
+  const { user, t } = useHeaderToolsLogic();
   const { t: Tprofile } = useTranslation('profile');
 
   const [lang, setLang] = useState('en');
@@ -61,7 +61,7 @@ const HeaderTools: FC<HeaderToolsProps> = ({ isMenuActive, setIsMenuActive }) =>
     <div className={ChangeLangAndThemeContainerStyles()}>
       <Dropdown menu={{ items, onClick: handleMenuClick }}>
         <a onClick={(e) => e.preventDefault()}>
-          <Space className="flex cursor-pointer items-center gap-2 rounded-md bg-[#00000010] p-[0.55rem]">
+          <Space className="flex cursor-pointer items-center gap-2 rounded-md bg-[#FEBAD1] p-[0.55rem]">
             <img
               src={languages[lang as keyof typeof languages].flag}
               alt={lang}
@@ -71,9 +71,9 @@ const HeaderTools: FC<HeaderToolsProps> = ({ isMenuActive, setIsMenuActive }) =>
         </a>
       </Dropdown>
 
-      <div onClick={changeTheme} className={ChangeThemeStyles()}>
+      {/* <div onClick={changeTheme} className={ChangeThemeStyles()}>
         <span>{themeIcon}</span>
-      </div>
+      </div> */}
 
       <div className="hidden sm:block">
         {user ? (

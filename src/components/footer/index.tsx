@@ -1,7 +1,6 @@
 import React from 'react';
 import { Input } from 'antd';
-import { 
-  TwitterOutlined, 
+import {  
   InstagramOutlined, 
   FacebookOutlined 
 } from '@ant-design/icons';
@@ -49,13 +48,10 @@ const Footer: React.FC = () => {
 
           {/* Social Icons - Aligned Right on Desktop */}
           <div className="flex items-center justify-end gap-6 md:w-1/4">
-            <a href="#" className="text-lg text-slate-400 transition-colors hover:text-slate-900">
-              <TwitterOutlined />
-            </a>
-            <a href="#" className="text-lg text-slate-400 transition-colors hover:text-slate-900">
+            <a href="https://www.instagram.com/squadtrip.1?igsh=MWFpcTQ0NXozYTJrMg%3D%3D&utm_source=qr" className="text-lg text-slate-400 transition-colors hover:text-slate-900">
               <InstagramOutlined />
             </a>
-            <a href="#" className="text-lg text-slate-400 transition-colors hover:text-slate-900">
+            <a href="www.tiktok.com/@squadtrip8" className="text-lg text-slate-400 transition-colors hover:text-slate-900">
               <FacebookOutlined />
             </a>
           </div>

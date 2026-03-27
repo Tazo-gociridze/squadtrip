@@ -12,7 +12,7 @@ const MenuBtns: FC<{ setIsMenuActive: (state: boolean) => void }> = ({ setIsMenu
       {user ? (
         <Link to={'profile'} className="w-full">
           <Button
-            className="w-full bg-[#f3cadc38] py-5 text-white"
+            className="w-full !bg-[#FEBAD1] py-5 text-white"
             onClick={() => setIsMenuActive(false)}
           >
             {profileT('profile')}
@@ -21,7 +21,7 @@ const MenuBtns: FC<{ setIsMenuActive: (state: boolean) => void }> = ({ setIsMenu
       ) : (
         <Link to={`/login`} className="w-full">
           <Button
-            className="w-full bg-[#f3cadc38] py-5 text-white"
+            className="w-full !bg-[#FEBAD1] py-5 text-white"
             onClick={() => setIsMenuActive(false)}
           >
             {t('headerLogin')}

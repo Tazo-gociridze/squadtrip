@@ -2,7 +2,7 @@ import { cva } from 'class-variance-authority';
 
 export const ButtonStyles = cva(
   [
-    'rounded-md bg-[var(--main-color)] text-[12px] lg:text-[16px] px-6 py-2 text-[var(--white-color)]',
+    'rounded-md bg-[#FEBAD1] text-[12px] lg:text-[16px] px-6 py-2 text-[var(--white-color)]',
   ],
   {
     variants: {

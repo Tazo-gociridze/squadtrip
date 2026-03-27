@@ -35,7 +35,7 @@ const HomeMainSection: React.FC = () => {
 
   return (
     <div className="font-['Plus_Jakarta_Sans'] select-none overflow-x-hidden">
-      {/* Hero Section */}
+      {/* Hero Section - ОСТАВЛЯЕМ КАК ЕСТЬ (ТЕМНЫЙ) */}
       <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0 bg-main-background-2 bg-cover bg-fixed bg-center bg-no-repeat transition-transform duration-1000 scale-105" />
         <div className="flex h-full w-full items-center justify-center bg-gradient-to-b from-[#5234353f] to-[#000000b9] backdrop-blur-[1px]">
@@ -46,24 +46,28 @@ const HomeMainSection: React.FC = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="relative z-10 -mt-12 w-full rounded-t-[4rem] bg-white pt-24 pb-20 shadow-[0_-20px_50px_rgba(0,0,0,0.05)] px-4 md:px-20 lg:px-48">
+      {/* Services, Memories & CTA Section - ТЕПЕРЬ С ПАСТЕЛЬНЫМ ГРАДИЕНТОМ */}
+      <section className="relative z-10 -mt-12 w-full rounded-t-[4rem] 
+        bg-[linear-gradient(135deg,_#e0f2fe_0%,_#ffffff_50%,_#fce7f3_100%)]
+        pt-24 pb-20 shadow-[0_-20px_50px_rgba(0,0,0,0.05)] px-4 md:px-20 lg:px-48"
+      >
         <div className="w-full">
           <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-50 pb-10">
             <div>
               <span className="text-[#b9b9fa] font-bold tracking-widest uppercase text-xs">Features</span>
               <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mt-2">Our Services</h2>
             </div>
-            <p className="text-slate-400 max-w-xs text-md font-medium leading-relaxed">
+            <p className="text-slate-400 max-w-xs text-lg font-medium leading-relaxed mt-9">
               Everything you need to plan a perfect group trip without the stress.
             </p>
           </div>
 
+          {/* Карточки сервисов остаются белыми/пастельными для контраста */}
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
             {services.map((service, index) => (
               <article
                 key={`${service.title}-${index}`}
-                className={`group relative flex flex-col rounded-[2.5rem] bg-slate-50 p-8 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-[#b9b9fa]/30 ${service.bg}`}
+                className={`group relative flex flex-col rounded-[2.5rem] bg-white p-8 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-[#b9b9fa]/30 ${service.bg}`}
               >
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-sm transition-transform group-hover:scale-110 group-hover:rotate-3">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-[#b9b9fa]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -89,7 +93,7 @@ const HomeMainSection: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
-            {/* Problem */}
+            {/* Карточки (Problem/Solution) остаются на своем месте */}
             <div className="group flex flex-col rounded-[3.5rem] bg-[#f3efff] p-10 md:p-12 transition-all hover:rotate-1">
               <h3 className="mb-8 text-3xl font-bold italic text-[#6b4fa3] font-['Caveat']">— The Problem</h3>
               <ul className="space-y-5">
@@ -101,7 +105,6 @@ const HomeMainSection: React.FC = () => {
               </ul>
             </div>
 
-            {/* Solution */}
             <div className="relative flex flex-col rounded-[3.5rem] bg-[#fff9db] p-10 md:p-12 shadow-2xl shadow-yellow-100 md:-translate-y-10 ring-[8px] md:ring-[12px] ring-white">
               <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-yellow-400 text-white text-[10px] font-black px-5 py-1.5 rounded-full uppercase tracking-widest shadow-lg whitespace-nowrap">The Solution</div>
               <h3 className="mb-8 text-3xl font-bold italic text-[#857621] font-['Caveat']">— Our Solution</h3>
@@ -116,7 +119,6 @@ const HomeMainSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Features */}
             <div className="group flex flex-col rounded-[3.5rem] bg-[#eaf7ff] p-10 md:p-12 transition-all hover:-rotate-1">
               <h3 className="mb-8 text-3xl font-bold italic text-[#3b7ba3] font-['Caveat']">— Key Features</h3>
               <div className="grid grid-cols-1 gap-4">
@@ -131,10 +133,10 @@ const HomeMainSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Early Access CTA Section */}
+        {/* Early Access CTA Section - Теперь тоже на этом градиентном фоне */}
         <div className="mt-40 w-full">
-          <div className="relative overflow-hidden rounded-[3rem] md:rounded-[4rem] bg-[#f8f8ff] py-20 md:py-24 px-6 md:px-10 border border-slate-100 text-center">
-            {/* Декоративные элементы */}
+          <div className="relative overflow-hidden rounded-[3rem] md:rounded-[4rem] bg-white py-20 md:py-24 px-6 md:px-10 border border-slate-100 text-center shadow-inner">
+            {/* Оставляем внутренние блики, они хорошо смотрятся на этом фоне */}
             <div className="absolute top-0 left-1/4 h-64 w-64 rounded-full bg-indigo-50/50 blur-[100px]" />
             <div className="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-blue-50/50 blur-[100px]" />
             
@@ -150,11 +152,11 @@ const HomeMainSection: React.FC = () => {
               <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Input 
                   placeholder="Enter your email" 
-                  className="h-16 w-full sm:max-w-sm rounded-full border-slate-200 px-8 text-lg font-medium shadow-sm transition-all focus:border-[#b9b9fa] focus:ring-2 focus:ring-[#b9b9fa]/20"
+                  className="h-16 w-full sm:max-w-sm rounded-full border-slate-200 px-8 text-lg font-medium shadow-sm focus:border-[#b9b9fa] focus:ring-2 focus:ring-[#b9b9fa]/20"
                 />
                 <Button 
                   size="large"
-                  className="h-16 w-full sm:w-auto rounded-full border-none bg-[#b9b9fa] px-12 text-lg font-bold text-white shadow-xl shadow-indigo-100 transition-all hover:scale-105 hover:!bg-[#9a9af5] active:scale-95"
+                  className="h-16 w-full sm:w-auto rounded-full border-none bg-[#FEBAD1] px-12 text-lg font-bold text-white shadow-xl shadow-indigo-100 transition-all hover:scale-105 hover:!bg-[#FEBAD1] hover:!text-white active:scale-95"
                 >
                   Join the Waitlist
                 </Button>
