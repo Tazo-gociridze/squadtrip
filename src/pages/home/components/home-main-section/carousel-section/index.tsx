@@ -7,7 +7,7 @@ const HomeMainSectionCarousel = () => {
   const { data, isPending } = useGetLatestToursQuery({});
 
   const parentStyles = `absolute right-7 top-7 z-0 ${!isPending ? 'h-[500px]' : 'h-0'}
-   w-full bg-[#F3CADC] opacity-80 dark:opacity-60`;
+   w-full bg-[#f792a3] opacity-80 dark:opacity-60`;
 
   return (
     <div className="relative m-auto w-[90%] shadow-2xl">
