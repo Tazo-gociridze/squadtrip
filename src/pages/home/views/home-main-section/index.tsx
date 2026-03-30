@@ -53,7 +53,7 @@ const HomeMainSection: React.FC = () => {
     <div className="font-['Plus_Jakarta_Sans'] select-none overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 bg-main-background-2 bg-cover bg-fixed bg-center bg-no-repeat transition-transform duration-1000 scale-105" />
+        <div className="absolute inset-0 bg-main-background-2 bg-cover bg-bottom bg-fixed bg-no-repeat transition-transform duration-1000 scale-105" />
         <div className="flex h-full w-full items-center justify-center bg-gradient-to-b from-[#5234353f] to-[#000000b9] backdrop-blur-[1px]">
           <div className="grid grid-cols-1 items-center gap-x-10 gap-y-16 lg:grid-cols-2 xl:gap-x-56 px-10 text-white w-full">
             <HomeMainSectionText />

@@ -13,7 +13,7 @@ const HomeMainSectionText: React.FC = () => {
 
       {/* Description - Elegant Cursive/Italic */}
       <div className="max-w-xl">
-        <p className="text-xl md:text-[26px] leading-[1.4] text-white/85 font-['Caveat'] italic tracking-wide">
+        <p className="text-xl md:text-[26px] leading-[1.4] text-white/95 font-['Caveat'] italic tracking-wide">
           SquadTrip helps friends plan trips together, vote on decisions, 
           track shared expenses, and coordinate tasks — all in one place.
         </p>
@@ -23,7 +23,7 @@ const HomeMainSectionText: React.FC = () => {
       <Button 
         type="primary"
         size="large"
-        className="h-[60px] px-12 rounded-[20px] bg-[#120822] border-none text-white font-bold text-lg hover:!bg-[#221638] transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-black/40"
+        className="h-[60px] px-12 rounded-[20px] bg-[#81c2fa] border-none text-white font-bold text-lg hover:!bg-[#81c2fa] transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-black/40"
       >
         Get in touch
       </Button>
