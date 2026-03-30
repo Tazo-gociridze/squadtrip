@@ -1,7 +1,10 @@
 import React, { useMemo } from 'react';
-import { Button, Input } from 'antd';
+import { Button, Input, Collapse } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
 import HomeMainSectionCarousel from '../../components/home-main-section/carousel-section';
 import HomeMainSectionText from '../../components/home-main-section/text-section';
+
+const { Panel } = Collapse;
 
 // Интерфейсы для типизации
 interface ServiceItem {
@@ -17,7 +20,6 @@ interface FeatureItem {
 }
 
 const HomeMainSection: React.FC = () => {
-  // Оптимизация данных через useMemo для ESLint
   const services: ServiceItem[] = useMemo(() => [
     { title: "Management", desc: "Voting & decision-making tools. Task assignment.", icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2", bg: "hover:bg-blue-50" },
     { title: "Finance", desc: "Bill splitting, payment reminders & tracking.", icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z", bg: "hover:bg-emerald-50" },
@@ -33,9 +35,23 @@ const HomeMainSection: React.FC = () => {
     { icon: "🗺️", t: "Travel maps" }
   ], []);
 
+  // Данные для новых секций
+  const steps = useMemo(() => [
+    { num: "1", title: "Build Your Trip", desc: "Create your trip, add destination, dates, and plans." },
+    { num: "2", title: "Invite Friends", desc: "Share the trip with your group and start planning together." },
+    { num: "3", title: "Manage Everything", desc: "Vote on decisions, split expenses, and keep everything organized in one place." }
+  ], []);
+
+  const faqs = useMemo(() => [
+    { q: "Is my payment information secure?", a: "Yes, SquadTrip uses secure systems to protect your data and transactions." },
+    { q: "How does expense splitting work?", a: "You can easily divide costs among group members, track who paid, and send reminders." },
+    { q: "What happens if plans change?", a: "You can update trip details anytime, and all members will see changes instantly." },
+    { q: "Do I need to download an app?", a: "No, you can use SquadTrip directly from your browser." }
+  ], []);
+
   return (
     <div className="font-['Plus_Jakarta_Sans'] select-none overflow-x-hidden">
-      {/* Hero Section - ОСТАВЛЯЕМ КАК ЕСТЬ (ТЕМНЫЙ) */}
+      {/* Hero Section */}
       <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0 bg-main-background-2 bg-cover bg-fixed bg-center bg-no-repeat transition-transform duration-1000 scale-105" />
         <div className="flex h-full w-full items-center justify-center bg-gradient-to-b from-[#5234353f] to-[#000000b9] backdrop-blur-[1px]">
@@ -46,11 +62,12 @@ const HomeMainSection: React.FC = () => {
         </div>
       </section>
 
-      {/* Services, Memories & CTA Section - ТЕПЕРЬ С ПАСТЕЛЬНЫМ ГРАДИЕНТОМ */}
+      {/* Main Bottom Section Area */}
       <section className="relative z-10 -mt-12 w-full rounded-t-[4rem] 
         bg-[linear-gradient(135deg,_#e0f2fe_0%,_#ffffff_50%,_#fce7f3_100%)]
         pt-24 pb-20 shadow-[0_-20px_50px_rgba(0,0,0,0.05)] px-4 md:px-20 lg:px-48"
       >
+        {/* Services Section */}
         <div className="w-full">
           <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-50 pb-10">
             <div>
@@ -62,7 +79,6 @@ const HomeMainSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Карточки сервисов остаются белыми/пастельными для контраста */}
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
             {services.map((service, index) => (
               <article
@@ -84,16 +100,34 @@ const HomeMainSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Memories / Drama Section */}
+        {/* How It Works Section */}
         <div className="mt-40 w-full">
           <div className="text-center mb-16">
+            <span className="text-[#b9b9fa] font-bold tracking-widest uppercase text-xs">Process</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mt-2 italic font-['Caveat']">How It Works</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {steps.map((step, idx) => (
+              <div key={idx} className="relative p-10 rounded-[3rem] bg-white/50 border border-white hover:bg-white transition-all duration-300 shadow-sm text-center">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#b9b9fa] text-white font-black mb-6 shadow-lg shadow-[#b9b9fa]/30">
+                  {step.num}
+                </div>
+                <h3 className="text-2xl font-bold text-slate-800 mb-4">{step.title}</h3>
+                <p className="text-slate-500 font-medium leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Memories / Drama Section */}
+        <div className="mt-40 w-full">
+          <div className="text-center !mb-32">
             <h2 className="text-5xl md:text-7xl text-slate-700 font-['Caveat'] tracking-tight">
               Keep the memories, lose the drama
             </h2>
           </div>
 
           <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
-            {/* Карточки (Problem/Solution) остаются на своем месте */}
             <div className="group flex flex-col rounded-[3.5rem] bg-[#f3efff] p-10 md:p-12 transition-all hover:rotate-1">
               <h3 className="mb-8 text-3xl font-bold italic text-[#6b4fa3] font-['Caveat']">— The Problem</h3>
               <ul className="space-y-5">
@@ -133,13 +167,49 @@ const HomeMainSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Early Access CTA Section - Теперь тоже на этом градиентном фоне */}
+{/* FAQ Section */}
+        <div className="mt-40 w-full max-w-8xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-[#b9b9fa] font-black tracking-widest uppercase text-[11px]">
+              Support
+            </span>
+            <h2 className="text-5xl md:text-6xl text-slate-900 mt-2 font-['Caveat'] tracking-tight">
+              FAQ
+            </h2>
+          </div>
+
+          <Collapse
+            ghost
+            expandIconPosition="right"
+            expandIcon={({ isActive }) => <PlusOutlined rotate={isActive ? 45 : 0} className="text-[#b9b9fa] text-xl" />}
+            className="faq-collapse"
+          >
+            {faqs.map((faq, idx) => (
+              <Panel 
+                header={
+                  <span className="text-xl font-extrabold text-slate-800 tracking-tight leading-none">
+                    {faq.q}
+                  </span>
+                } 
+                key={idx}
+                className="mb-4 rounded-[2rem] bg-white/60 border border-white overflow-hidden shadow-sm"
+              >
+                <div className="px-4 pb-4">
+                  <p className="text-slate-500 text-[17px] font-medium leading-relaxed tracking-wide">
+                    {faq.a}
+                  </p>
+                </div>
+              </Panel>
+            ))}
+          </Collapse>
+        </div>
+
+        {/* Early Access CTA Section */}
         <div className="mt-40 w-full">
           <div className="relative overflow-hidden rounded-[3rem] md:rounded-[4rem] bg-white py-20 md:py-24 px-6 md:px-10 border border-slate-100 text-center shadow-inner">
-            {/* Оставляем внутренние блики, они хорошо смотрятся на этом фоне */}
             <div className="absolute top-0 left-1/4 h-64 w-64 rounded-full bg-indigo-50/50 blur-[100px]" />
             <div className="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-blue-50/50 blur-[100px]" />
-            
+
             <div className="relative z-10 mx-auto max-w-2xl">
               <span className="text-[#b9b9fa] font-black text-xs uppercase tracking-[0.3em]">Limited Access</span>
               <h2 className="mt-4 text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tighter leading-tight">
@@ -148,13 +218,13 @@ const HomeMainSection: React.FC = () => {
               <p className="mt-8 text-slate-500 text-lg font-medium leading-relaxed">
                 Join our exclusive early access list and help us redefine how friends travel together. No more drama, just memories.
               </p>
-              
+
               <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Input 
-                  placeholder="Enter your email" 
+                <Input
+                  placeholder="Enter your email"
                   className="h-16 w-full sm:max-w-sm rounded-full border-slate-200 px-8 text-lg font-medium shadow-sm focus:border-[#b9b9fa] focus:ring-2 focus:ring-[#b9b9fa]/20"
                 />
-                <Button 
+                <Button
                   size="large"
                   className="h-16 w-full sm:w-auto rounded-full border-none bg-[#FEBAD1] px-12 text-lg font-bold text-white shadow-xl shadow-indigo-100 transition-all hover:scale-105 hover:!bg-[#FEBAD1] hover:!text-white active:scale-95"
                 >

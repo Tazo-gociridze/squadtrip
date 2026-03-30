@@ -59,7 +59,7 @@ const HeaderTools: FC<HeaderToolsProps> = () => {
     <div className={ChangeLangAndThemeContainerStyles()}>
       <Dropdown menu={{ items, onClick: handleMenuClick }}>
         <a onClick={(e) => e.preventDefault()}>
-          <Space className="flex cursor-pointer items-center gap-2 rounded-md bg-[#FEBAD1] p-[0.55rem]">
+          <Space className="flex cursor-pointer items-center gap-2 rounded-md bg-[#f792a3] p-[0.55rem]">
             <img
               src={languages[lang as keyof typeof languages].flag}
               alt={lang}
@@ -76,11 +76,11 @@ const HeaderTools: FC<HeaderToolsProps> = () => {
       <div className="block">
         {user ? (
           <Link to={'/profile'}>
-            <Button style={{backgroundColor: "#FEBAD1"}}>{Tprofile('profile')}</Button>
+            <Button className='bg-[#f792a3]' style={{backgroundColor: "#f792a3"}}>{Tprofile('profile')}</Button>
           </Link>
         ) : (
           <Link to={`/login`}>
-            <Button style={{backgroundColor: "#FEBAD1"}}>{t('headerLogin')}</Button>
+            <Button style={{backgroundColor: "#f792a3"}}>{t('headerLogin')}</Button>
           </Link>
         )}
       </div>
