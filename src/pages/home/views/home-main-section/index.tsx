@@ -3,6 +3,8 @@ import { Button, Input, Collapse } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import HomeMainSectionCarousel from '../../components/home-main-section/carousel-section';
 import HomeMainSectionText from '../../components/home-main-section/text-section';
+import { Link } from 'react-router-dom';
+import { useAuth } from '@/store/auth';
 
 const { Panel } = Collapse;
 
@@ -49,6 +51,7 @@ const HomeMainSection: React.FC = () => {
     { q: "Do I need to download an app?", a: "No, you can use SquadTrip directly from your browser." }
   ], []);
 
+  const [user] = useAuth();
   return (
     <div className="font-['Plus_Jakarta_Sans'] select-none overflow-x-hidden">
       {/* Hero Section */}
@@ -167,7 +170,7 @@ const HomeMainSection: React.FC = () => {
           </div>
         </div>
 
-{/* FAQ Section */}
+        {/* FAQ Section */}
         <div className="mt-40 w-full max-w-8xl mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-[#b9b9fa] font-black tracking-widest uppercase text-[11px]">
@@ -185,12 +188,12 @@ const HomeMainSection: React.FC = () => {
             className="faq-collapse"
           >
             {faqs.map((faq, idx) => (
-              <Panel 
+              <Panel
                 header={
                   <span className="text-xl font-extrabold text-slate-800 tracking-tight leading-none">
                     {faq.q}
                   </span>
-                } 
+                }
                 key={idx}
                 className="mb-4 rounded-[2rem] bg-white/60 border border-white overflow-hidden shadow-sm"
               >
@@ -219,18 +222,27 @@ const HomeMainSection: React.FC = () => {
                 Join our exclusive early access list and help us redefine how friends travel together. No more drama, just memories.
               </p>
 
-              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Input
-                  placeholder="Enter your email"
-                  className="h-16 w-full sm:max-w-sm rounded-full border-slate-200 px-8 text-lg font-medium shadow-sm focus:border-[#b9b9fa] focus:ring-2 focus:ring-[#b9b9fa]/20"
-                />
-                <Button
-                  size="large"
-                  className="h-16 w-full sm:w-auto rounded-full border-none bg-[#FEBAD1] px-12 text-lg font-bold text-white shadow-xl shadow-indigo-100 transition-all hover:scale-105 hover:!bg-[#FEBAD1] hover:!text-white active:scale-95"
-                >
-                  Join the Waitlist
-                </Button>
-              </div>
+
+              {
+                user
+                  ? <div></div>
+                  : <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <Input
+                      placeholder="Enter your email"
+                      className="h-16 w-full sm:max-w-sm rounded-full border-slate-200 px-8 text-lg font-medium shadow-sm focus:border-[#b9b9fa] focus:ring-2 focus:ring-[#b9b9fa]/20"
+                    /><Link to={'/login'}>
+                      <Button
+                        size="large"
+                        className="h-16 w-full sm:w-auto rounded-full border-none bg-[#FEBAD1] px-12 text-lg font-bold text-white shadow-xl shadow-indigo-100 transition-all hover:scale-105 hover:!bg-[#FEBAD1] hover:!text-white active:scale-95"
+                      >
+                        Join the Waitlist
+                      </Button>
+                    </Link>
+                  </div>
+              }
+
+
+
             </div>
           </div>
         </div>
